@@ -118,7 +118,7 @@ public class BinarySearchTree {
         }
         if(next == null || root.val < next.val){
             next = root;
-            if(root.left == null) return next;
+            // if(root.left == null) return next;
         }
         return findNextRec(root.left, val, next);
     }
