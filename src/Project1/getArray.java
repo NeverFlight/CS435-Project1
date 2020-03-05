@@ -13,6 +13,7 @@ public class getArray {
                 randomNum = random.nextInt();
             }
             arr[i] = randomNum;
+            unique.add(randomNum);
        }
        return arr;
    }
@@ -24,5 +25,15 @@ public class getArray {
        }
        return arr;
    }
-
+   public static void testRandomConstructBST(int n){
+       BinarySearchTree bst = new BinarySearchTree(0);
+       int[] rand = getArray.getRandomArray(n);
+       long startTime = System.nanoTime();
+       for(int i : rand){
+           bst.insertRec(i);
+       }
+       long endTime = System.nanoTime();
+       float current = (endTime - startTime) / 1_000_000;
+       System.out.println("The total running time is " + current + " milliseconds.");
+   }
 }
